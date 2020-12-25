@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "55051ed0-49a1-4ad0-a075-5e13bbb7f2c5",
+		"name": "Tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Upload",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Dropbox-API-Arg",
+						"value": "{\"mode\":\"add\",\"autorename\":true,\"mute\":false,\"path\":\"/exam\"}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/octet-stream",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": "/E:/5 семестр/Тестировка/WebApi/WebApi/Properties/AssemblyInfo.cs"
+					}
+				},
+				"url": {
+					"raw": "https://content.dropboxapi.com/2/files/upload",
+					"protocol": "https",
+					"host": [
+						"content",
+						"dropboxapi",
+						"com"
+					],
+					"path": [
+						"2",
+						"files",
+						"upload"
+					]
+				},
+				"description": "File upload request"
+			},
+			"response": []
+		},
+		{
+			"name": "GetMetadata",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"path\": \"/exam\"\n}"
+				},
+				"url": {
+					"raw": "https://api.dropboxapi.com/2/files/get_metadata",
+					"protocol": "https",
+					"host": [
+						"api",
+						"dropboxapi",
+						"com"
+					],
+					"path": [
+						"2",
+						"files",
+						"get_metadata"
+					]
+				},
+				"description": "Request for metadata"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"path\":\"/exam\"\r\n}"
+				},
+				"url": {
+					"raw": "https://api.dropboxapi.com/2/files/delete",
+					"protocol": "https",
+					"host": [
+						"api",
+						"dropboxapi",
+						"com"
+					],
+					"path": [
+						"2",
+						"files",
+						"delete"
+					]
+				},
+				"description": "Delete file"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "sl.An8o1oxCrFmSgPtcIRtfrx-KEdbunrOPyxgNdCUptlxdc-8-MPZGyPCKayFgOFQMKnMvQf7dacHpSKGZvLChcQsSWHUEj_Y1-sr6KbLlkFpOjeJtPOS8P-gPomK6bEz0f8DUeq39MxA",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
